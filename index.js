@@ -2,9 +2,19 @@
 import fs from 'fs';
 import ncp from 'copy-paste';
 const dictionary = fs.readFileSync('./dic.json', 'utf8');
-import readline from 'readline';
-var words = JSON.parse(dictionary);
 var allReadyUsed = [];
+const test = () => {
+  const dic = JSON.parse(dictionary);
+  // get all words with -  added them to allReadyUsed
+  for (let i = 0; i < dic.length; i++) {
+    if (dic[i].includes('-')) {
+      allReadyUsed.push(dic[i]);
+    }
+  }
+};
+test();
+const words = JSON.parse(dictionary);
+import readline from 'readline';
 words.sort((a, b) => {
   return b.length - a.length;
 }).filter((word) => {
@@ -17,6 +27,7 @@ const findWords = (letters) => {
       return words[i];
     }
   }
+  return 'No word found';
 }
 
 const rl = readline.createInterface({
