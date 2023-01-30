@@ -1,0 +1,11 @@
+# intellij stuff
+.idea/
+# vscode stuff
+.vscode/
+node_modules/
+# vim stuff
+*.swo
+*.swp
+# config files
+*.env
+*.log
