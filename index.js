@@ -1,7 +1,7 @@
 // read the dictionary file
 import fs from 'fs';
 import ncp from 'copy-paste';
-const dictionary = fs.readFileSync('./dic.json', 'utf8');
+const dictionary = fs.readFileSync('./dict/dictionary_fr.json', 'utf8');
 var allReadyUsed = [];
 const test = () => {
   const dic = JSON.parse(dictionary);
